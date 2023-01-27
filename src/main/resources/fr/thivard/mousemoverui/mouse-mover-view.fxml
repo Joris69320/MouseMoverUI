@@ -35,12 +35,29 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtCount" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Circle fx:id="status" fill="#0ff000" radius="11.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="status" fill="RED" radius="11.0" stroke="BLACK" strokeType="INSIDE">
                <HBox.margin>
                   <Insets left="20.0" top="3.0" />
                </HBox.margin>
