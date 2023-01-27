@@ -8,14 +8,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="240.0" maxWidth="360.0" minHeight="240.0" minWidth="360.0" prefHeight="240.0" prefWidth="360.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.thivard.mousemoverui.MouseMoverController">
+<VBox fx:id="boxApp" alignment="CENTER" maxHeight="240.0" maxWidth="360.0" minHeight="240.0" minWidth="360.0" prefHeight="240.0" prefWidth="360.0" spacing="20.0" styleClass="vbox" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.thivard.mousemoverui.MouseMoverController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox" stylesheets="@styles.css">
          <children>
-            <Button fx:id="btnStart" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onStart" prefWidth="100.0" text="Start">
+            <Button fx:id="btnStart" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onStart" prefWidth="100.0" stylesheets="@styles.css" text="Start">
                <font>
                   <Font size="18.0" />
                </font>
@@ -23,7 +23,7 @@
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="btnStop" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onStop" prefWidth="100.0" text="Stop">
+            <Button fx:id="btnStop" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onStop" prefWidth="100.0" stylesheets="@styles.css" text="Stop">
                <font>
                   <Font size="18.0" />
                </font>
@@ -33,14 +33,14 @@
             </Button>
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox" stylesheets="@styles.css">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Count">
+            <Text fill="#adefd1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Count">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fx:id="txtCount" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+            <Text fx:id="txtCount" fill="#adefd1" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -50,16 +50,16 @@
             </Text>
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox" stylesheets="@styles.css">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+            <Text fill="#adefd1" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
             <Circle fx:id="status" fill="RED" radius="11.0" stroke="BLACK" strokeType="INSIDE">
                <HBox.margin>
-                  <Insets left="20.0" top="3.0" />
+                  <Insets left="20.0" top="5.0" />
                </HBox.margin>
             </Circle>
          </children>

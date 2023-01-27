@@ -1,0 +1,19 @@
+.button{
+    -fx-background-color: #ADEFD1;
+    -fx-text-fill: #00203F;
+    -fx-background-radius: 50;
+    -fx-cursor: hand;
+}
+
+.button:hover{
+    -fx-background-color: #8fd1b3;
+}
+
+.vbox{
+    -fx-background-color: #ADEFD1;
+}
+
+.hbox{
+    -fx-background-color: #00203F;
+    -fx-background-radius: 50;
+}
