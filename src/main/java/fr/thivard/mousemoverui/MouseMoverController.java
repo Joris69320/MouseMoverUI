@@ -23,13 +23,13 @@ public class MouseMoverController {
     private Text txtCount;
     @FXML
     private VBox boxApp;
+    @FXML
+    private Text txtTimer;
 
-    public MouseMoverController() {
-
-    }
+    public MouseMoverController() {}
 
     /**
-     * Start button traitment
+     * Start button treatment
      */
     @FXML
     private void onStart() throws AWTException {
@@ -48,7 +48,13 @@ public class MouseMoverController {
                     robot.mouseMove(random.nextInt(400), random.nextInt(400));
                     refreshCount();
                     try {
-                        Thread.sleep(60000);
+                        int i = 60;
+                        while (i > 0){
+                            i--;
+                            txtTimer.setText(String.valueOf(i));
+                            Thread.sleep(1000);
+                        }
+                        txtTimer.setText("60");
                     } catch (InterruptedException e) {
                         System.out.println(AppManager.thread.getName()+" STOPPED");
                     }
@@ -59,7 +65,7 @@ public class MouseMoverController {
     }
 
     /**
-     * Stop button traitment
+     * Stop button treatment
      */
     @FXML
     private void onStop(){
@@ -69,6 +75,7 @@ public class MouseMoverController {
             AppManager.thread.interrupt();
             changeStatus();
             refreshCount();
+            txtTimer.setText("60");
         }
     }
 

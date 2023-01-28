@@ -35,19 +35,40 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox" stylesheets="@styles.css">
          <children>
-            <Text fill="#adefd1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Count">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <Text fx:id="txtCount" fill="#adefd1" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="10.0" />
-               </HBox.margin>
-            </Text>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#adefd1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Count">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtCount" fill="#adefd1" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#adefd1" strokeType="OUTSIDE" strokeWidth="0.0" text="Next">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtTimer" fill="#adefd1" strokeType="OUTSIDE" strokeWidth="0.0" text="60">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox" stylesheets="@styles.css">
