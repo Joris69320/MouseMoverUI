@@ -41,6 +41,9 @@
                      <font>
                         <Font size="18.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
                   </Text>
                   <Text fx:id="txtCount" fill="#adefd1" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                      <font>
@@ -64,7 +67,7 @@
                         <Font size="18.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="10.0" />
+                        <Insets left="10.0" right="25.0" />
                      </HBox.margin>
                   </Text>
                </children>
