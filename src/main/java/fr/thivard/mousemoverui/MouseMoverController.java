@@ -34,33 +34,33 @@ public class MouseMoverController {
     @FXML
     private void onStart() throws AWTException {
 
-        if(!AppManager.runningStatus && !AppManager.thread.isAlive()){
+        if(!AppManager.app.isRunning() && !AppManager.app.threadAlive()){
 
-            AppManager.runningStatus = true;
+            AppManager.app.changeStatus(true);
             changeStatus();
 
             java.awt.Robot robot = new Robot();
             SecureRandom random = new SecureRandom();
 
-            AppManager.thread = new Thread(() -> {
+            AppManager.app.setThread(new Thread(() -> {
 
-                while (AppManager.runningStatus){
+                while (AppManager.app.isRunning()){
                     robot.mouseMove(random.nextInt(400), random.nextInt(400));
                     refreshCount();
                     try {
                         int i = 60;
                         while (i > 0){
                             i--;
-                            txtTimer.setText(String.valueOf(i));
+                            refreshTimer(i);
                             Thread.sleep(1000);
                         }
-                        txtTimer.setText("60");
+                        refreshTimer(60);
                     } catch (InterruptedException e) {
-                        System.out.println(AppManager.thread.getName()+" STOPPED");
+                        System.out.println(AppManager.app.getThreadName()+" STOPPED");
                     }
                 }
-            });
-            AppManager.thread.start();
+            }));
+            AppManager.app.start();
         }
     }
 
@@ -70,12 +70,12 @@ public class MouseMoverController {
     @FXML
     private void onStop(){
 
-        if (AppManager.runningStatus){
-            AppManager.runningStatus = false;
-            AppManager.thread.interrupt();
+        if (AppManager.app.isRunning()){
+            AppManager.app.changeStatus(false);
+            AppManager.app.stop();
             changeStatus();
             refreshCount();
-            txtTimer.setText("60");
+            refreshTimer(60);
         }
     }
 
@@ -83,7 +83,7 @@ public class MouseMoverController {
      * Change the circle color
      */
     public void changeStatus(){
-        if(AppManager.runningStatus){
+        if(AppManager.app.isRunning()){
             this.status.setFill(Paint.valueOf("#0ff000"));
         }
         else{
@@ -95,11 +95,15 @@ public class MouseMoverController {
      * Stay the count up to date
      */
     public void refreshCount(){
-        if(AppManager.runningStatus){
+        if(AppManager.app.isRunning()){
             this.txtCount.setText(String.valueOf(Integer.parseInt(this.txtCount.getText())+1));
         }
         else {
             this.txtCount.setText("0");
         }
+    }
+
+    public void refreshTimer(int time){
+        this.txtTimer.setText(String.valueOf(time));
     }
 }

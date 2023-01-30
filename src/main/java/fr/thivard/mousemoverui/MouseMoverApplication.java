@@ -20,8 +20,8 @@ public class MouseMoverApplication extends Application {
         stage.setScene(scene);
         stage.show();
         stage.setOnCloseRequest(windowEvent -> {
-            AppManager.runningStatus = false;
-            AppManager.thread.interrupt();
+            AppManager.app.changeStatus(false);
+            AppManager.app.stop();
         });
     }
 

@@ -5,7 +5,5 @@ public class AppManager {
 
     private AppManager() { }
 
-    public static boolean runningStatus = false;
-
-    public static Thread thread = new Thread();
+    public final static App app = new App();
 }
