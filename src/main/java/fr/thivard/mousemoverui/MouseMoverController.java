@@ -26,8 +26,6 @@ public class MouseMoverController {
     @FXML
     private Text txtTimer;
 
-    public MouseMoverController() {}
-
     /**
      * Start button treatment
      */
