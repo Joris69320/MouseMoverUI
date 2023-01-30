@@ -1,13 +1,18 @@
 package fr.thivard.mousemoverui.manager;
 
+import org.apache.log4j.Logger;
+
 public class App {
 
     private boolean runningStatus;
     private Thread thread;
+    private final Logger logger;
 
+    @SuppressWarnings("InstantiatingAThreadWithDefaultRunMethod")
     public App(){
         this.runningStatus = false;
         this.thread = new Thread();
+        this.logger = Logger.getLogger(App.class);
     }
 
     public boolean isRunning(){
@@ -34,7 +39,7 @@ public class App {
         this.thread = thread;
     }
 
-    public String getThreadName(){
-        return this.thread.getName();
+    public void log(String message){
+        this.logger.debug(message);
     }
 }
