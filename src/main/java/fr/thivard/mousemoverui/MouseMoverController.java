@@ -1,7 +1,7 @@
 package fr.thivard.mousemoverui;
 
 import java.awt.*;
-import java.util.Random;
+import java.security.SecureRandom;
 import fr.thivard.mousemoverui.manager.AppManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -40,7 +40,7 @@ public class MouseMoverController {
             changeStatus();
 
             java.awt.Robot robot = new Robot();
-            Random random = new Random();
+            SecureRandom random = new SecureRandom();
 
             AppManager.thread = new Thread(() -> {
 
