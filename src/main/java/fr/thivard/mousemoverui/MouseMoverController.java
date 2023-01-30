@@ -54,6 +54,7 @@ public class MouseMoverController {
                         }
                         refreshTimer(60);
                     } catch (InterruptedException e) {
+                        e.printStackTrace();
                         System.out.println(AppManager.app.getThreadName()+" STOPPED");
                     }
                 }
