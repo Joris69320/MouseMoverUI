@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import org.apache.log4j.Logger;
 
 @SuppressWarnings("BusyWait")
 public class MouseMoverController {
@@ -40,6 +41,8 @@ public class MouseMoverController {
             java.awt.Robot robot = new Robot();
             SecureRandom random = new SecureRandom();
 
+            Logger logger = Logger.getLogger(MouseMoverController.class);
+
             AppManager.app.setThread(new Thread(() -> {
 
                 while (AppManager.app.isRunning()){
@@ -54,6 +57,7 @@ public class MouseMoverController {
                         }
                         refreshTimer(60);
                     } catch (InterruptedException e) {
+                        logger.debug(e.getMessage());
                         System.out.println(AppManager.app.getThreadName()+" STOPPED");
                     }
                 }
