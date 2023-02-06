@@ -1,6 +1,6 @@
 package fr.thivard.mousemoverui.manager;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.*;
 
 public class App {
 
@@ -12,7 +12,7 @@ public class App {
     public App(){
         this.runningStatus = false;
         this.thread = new Thread();
-        this.logger = Logger.getLogger(App.class);
+        this.logger = LogManager.getLogger(App.class.getName());
     }
 
     public boolean isRunning(){
