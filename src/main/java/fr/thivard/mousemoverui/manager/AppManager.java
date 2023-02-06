@@ -5,5 +5,5 @@ public class AppManager {
 
     private AppManager() { }
 
-    public final static App app = new App();
+    public static final  App app = new App();
 }
