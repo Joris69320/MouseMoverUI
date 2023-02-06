@@ -39,7 +39,7 @@ public class App {
         this.thread = thread;
     }
 
-    public void log(String message){
-        this.logger.debug(message);
+    public void info(String message){
+        this.logger.info(message);
     }
 }
