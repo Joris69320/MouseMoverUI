@@ -42,4 +42,6 @@ public class App {
     public void info(String message){
         this.logger.info(message);
     }
+
+    public Thread getThread(){return this.thread;}
 }
