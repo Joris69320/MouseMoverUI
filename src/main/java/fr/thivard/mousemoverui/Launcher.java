@@ -7,7 +7,7 @@ public class Launcher {
     public static void main(String[] args){
         Configurator.initialize("Config", String.valueOf(Launcher.class.getResource("log4j.properties")));
         String startLog =   """
-                            \n
+                            
                             ---------------------------------------------
                                 MouseMoverUI started on version 1.1.3
                             ---------------------------------------------
