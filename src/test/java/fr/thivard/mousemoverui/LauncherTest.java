@@ -1,18 +1,19 @@
 package fr.thivard.mousemoverui;
 
-import fr.thivard.mousemoverui.manager.AppManager;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import static fr.thivard.mousemoverui.Launcher.*;
 
 class LauncherTest {
 
     @Test
-    void main() {
-        String startLog =   """
+    void mainTest() {
+        assertEquals("""
                             
                             ---------------------------------------------
                                 MouseMoverUI started on version 1.1.3
                             ---------------------------------------------
-                            """;
-        AppManager.app.info(startLog);
+                            """, startLog);
+
     }
 }
