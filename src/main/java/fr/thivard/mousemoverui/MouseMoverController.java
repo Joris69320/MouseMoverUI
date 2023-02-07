@@ -81,7 +81,7 @@ public class MouseMoverController {
     /**
      * Change the circle color
      */
-    public void changeStatus(){
+    private void changeStatus(){
         if(AppManager.app.isRunning()){
             this.status.setFill(Paint.valueOf("#0ff000"));
         }
@@ -93,7 +93,7 @@ public class MouseMoverController {
     /**
      * Stay the count up to date
      */
-    public void refreshCount(){
+    private void refreshCount(){
         if(AppManager.app.isRunning()){
             this.txtCount.setText(String.valueOf(Integer.parseInt(this.txtCount.getText())+1));
         }
@@ -102,7 +102,7 @@ public class MouseMoverController {
         }
     }
 
-    public void refreshTimer(int time){
+    private void refreshTimer(int time){
         this.txtTimer.setText(String.valueOf(time));
     }
 }
