@@ -5,8 +5,6 @@ import java.net.URL;
 import java.security.SecureRandom;
 import java.util.ResourceBundle;
 import fr.thivard.mousemoverui.manager.AppManager;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
