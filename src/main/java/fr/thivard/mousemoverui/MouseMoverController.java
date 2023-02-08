@@ -3,10 +3,7 @@ package fr.thivard.mousemoverui;
 import java.awt.*;
 import java.net.URL;
 import java.security.SecureRandom;
-import java.util.PrimitiveIterator;
 import java.util.ResourceBundle;
-
-import fr.thivard.mousemoverui.manager.App;
 import fr.thivard.mousemoverui.manager.AppManager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -44,24 +41,21 @@ public class MouseMoverController implements Initializable {
         time = 60L;
         AppManager.app.setTime(time);
 
-        txtTime.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                if(!txtTime.getText().isEmpty()){
-                    try{
-                        if(txtTime.getText().length() <= 4){
-                            if(Long.parseLong(observableValue.getValue()) >= 20 && Long.parseLong(observableValue.getValue()) <= 1800){
-                                time = Long.parseLong(observableValue.getValue());
-                            } else {
-                                time = 60L;
-                            }
+        txtTime.textProperty().addListener((observableValue, s, t1) -> {
+            if(!txtTime.getText().isEmpty()){
+                try{
+                    if(txtTime.getText().length() <= 4){
+                        if(Long.parseLong(observableValue.getValue()) >= 20 && Long.parseLong(observableValue.getValue()) <= 1800){
+                            time = Long.parseLong(observableValue.getValue());
+                        } else {
+                            time = 60L;
                         }
                     }
-                    catch (Exception e){
-                        AppManager.app.error(e.getMessage());
-                    }
-                    refreshTimer(time);
                 }
+                catch (Exception e){
+                    AppManager.app.error(e.getMessage());
+                }
+                refreshTimer(time);
             }
         });
     }
