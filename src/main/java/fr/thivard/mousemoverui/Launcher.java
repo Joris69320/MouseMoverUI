@@ -5,7 +5,7 @@ import org.apache.logging.log4j.core.config.Configurator;
 
 public class Launcher {
 
-    public static final String startLog =   """
+    public static final String startLog = """
                             
                             ---------------------------------------------
                                 MouseMoverUI started on version 1.1.3

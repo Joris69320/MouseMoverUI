@@ -7,13 +7,21 @@ import static fr.thivard.mousemoverui.Launcher.*;
 class LauncherTest {
 
     @Test
-    void mainTest() {
-        assertEquals("""
+    void main() {
+
+        //Given
+        String expected = """
                             
                             ---------------------------------------------
                                 MouseMoverUI started on version 1.1.3
                             ---------------------------------------------
-                            """, startLog);
+                            """;
+
+        //When
+        String actual = startLog;
+
+        //Then
+        assertEquals(expected, actual);
 
     }
 }
