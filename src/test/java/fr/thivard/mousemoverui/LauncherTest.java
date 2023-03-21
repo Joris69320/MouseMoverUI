@@ -18,10 +18,9 @@ class LauncherTest {
                             """;
 
         //When
-        String actual = STARTLOG;
 
         //Then
-        assertEquals(expected, actual);
+        assertEquals(expected, STARTLOG);
 
     }
 }
