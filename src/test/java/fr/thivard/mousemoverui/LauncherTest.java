@@ -13,15 +13,14 @@ class LauncherTest {
         String expected = """
                             
                             ---------------------------------------------
-                                MouseMoverUI started on version 1.1.3
+                                MouseMoverUI started on version 1.2.1
                             ---------------------------------------------
                             """;
 
         //When
-        String actual = STARTLOG;
 
         //Then
-        assertEquals(expected, actual);
+        assertEquals(STARTLOG, expected);
 
     }
 }

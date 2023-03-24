@@ -8,7 +8,7 @@ public class Launcher {
     public static final String STARTLOG = """
                             
                             ---------------------------------------------
-                                MouseMoverUI started on version 1.1.3
+                                MouseMoverUI started on version 1.2.1
                             ---------------------------------------------
                             """;
 

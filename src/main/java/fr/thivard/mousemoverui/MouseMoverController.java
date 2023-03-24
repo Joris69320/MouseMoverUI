@@ -76,6 +76,7 @@ public class MouseMoverController implements Initializable {
 
                 while (AppManager.app.isRunning()){
                     robot.mouseMove(random.nextInt(400), random.nextInt(400));
+                    AppManager.app.info("Mouse moved.");
                     refreshCount();
                     try {
                         AppManager.app.setTime(time);
@@ -86,12 +87,13 @@ public class MouseMoverController implements Initializable {
                         }
                         refreshTimer(AppManager.app.getTime());
                     } catch (InterruptedException e) {
-                        AppManager.app.info(e.getMessage());
+                        AppManager.app.info("Move thread stopped.");
                         AppManager.app.getThread().interrupt();
                     }
                 }
             }));
             AppManager.app.start();
+            AppManager.app.info("Mouve thread started.");
             txtTime.setDisable(true);
         }
     }
