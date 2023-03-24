@@ -20,7 +20,7 @@ class LauncherTest {
         //When
 
         //Then
-        assertEquals(expected, STARTLOG);
+        assertEquals(STARTLOG, expected);
 
     }
 }
