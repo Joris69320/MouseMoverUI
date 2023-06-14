@@ -9,7 +9,7 @@ public class Launcher {
         String startLog =   """
                             
                             ---------------------------------------------
-                                MouseMoverUI started on version 1.1.3
+                                MouseMoverUI started on version 1.1.5
                             ---------------------------------------------
                             """;
         AppManager.app.info(startLog);
