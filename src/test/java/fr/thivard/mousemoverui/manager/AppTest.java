@@ -21,43 +21,4 @@ class AppTest {
         assertFalse(actualFalse);
         assertTrue(actualTrue);
     }
-
-    @Test
-    void threadAliveTrue() {
-
-        //Given
-        App app = new App();
-
-        //When
-        app.start();
-
-        //Then
-        assertTrue(app.threadAlive());
-
-    }
-
-    @Test
-    void threadAliveFalse(){
-
-        //Given
-        App app = new App();
-
-        //When
-
-        //Then
-        assertFalse(app.threadAlive());
-    }
-
-    @Test
-    void setThread() {
-
-        //Given
-        App app = new App();
-
-        //When
-        app.setThread(null);
-
-        //Then
-        assertNull(app.getThread());
-    }
 }

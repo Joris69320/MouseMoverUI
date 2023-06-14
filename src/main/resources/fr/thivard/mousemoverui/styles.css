@@ -17,3 +17,9 @@
     -fx-background-color: #00203F;
     -fx-background-radius: 50;
 }
+
+.text-field{
+    -fx-background-radius: 15;
+    -fx-cursor: text;
+    -fx-text-fill: #00203F;
+}

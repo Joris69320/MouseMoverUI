@@ -1,17 +1,21 @@
 package fr.thivard.mousemoverui;
 
 import java.awt.*;
+import java.net.URL;
 import java.security.SecureRandom;
+import java.util.ResourceBundle;
 import fr.thivard.mousemoverui.manager.AppManager;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
 @SuppressWarnings("BusyWait")
-public class MouseMoverController {
+public class MouseMoverController implements Initializable {
 
     @FXML
     private Button btnStart;
@@ -25,6 +29,34 @@ public class MouseMoverController {
     private VBox boxApp;
     @FXML
     private Text txtTimer;
+    @FXML
+    private TextField txtTime;
+    private Long time;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        time = 60L;
+        AppManager.app.setTime(time);
+
+        txtTime.textProperty().addListener((observableValue, s, t1) -> {
+            if(!txtTime.getText().isEmpty()){
+                try{
+                    if(txtTime.getText().length() <= 4){
+                        if(Long.parseLong(observableValue.getValue()) >= 20 && Long.parseLong(observableValue.getValue()) <= 1800){
+                            time = Long.parseLong(observableValue.getValue());
+                        } else {
+                            time = 60L;
+                        }
+                    }
+                }
+                catch (Exception e){
+                    AppManager.app.error(e.getMessage());
+                }
+                refreshTimer(time);
+            }
+        });
+    }
 
     /**
      * Start button treatment
@@ -44,22 +76,25 @@ public class MouseMoverController {
 
                 while (AppManager.app.isRunning()){
                     robot.mouseMove(random.nextInt(400), random.nextInt(400));
+                    AppManager.app.info("Mouse moved.");
                     refreshCount();
                     try {
-                        int i = 60;
-                        while (i > 0){
-                            i--;
-                            refreshTimer(i);
+                        AppManager.app.setTime(time);
+                        while (AppManager.app.getTime() > 0){
+                            AppManager.app.next();
+                            refreshTimer(AppManager.app.getTime());
                             Thread.sleep(1000);
                         }
-                        refreshTimer(60);
+                        refreshTimer(AppManager.app.getTime());
                     } catch (InterruptedException e) {
-                        AppManager.app.info(e.getMessage());
+                        AppManager.app.info("Move thread stopped.");
                         AppManager.app.getThread().interrupt();
                     }
                 }
             }));
             AppManager.app.start();
+            AppManager.app.info("Mouve thread started.");
+            txtTime.setDisable(true);
         }
     }
 
@@ -72,9 +107,11 @@ public class MouseMoverController {
         if (AppManager.app.isRunning()){
             AppManager.app.changeStatus(false);
             AppManager.app.stop();
+            AppManager.app.setTime(time);
             changeStatus();
             refreshCount();
-            refreshTimer(60);
+            refreshTimer(AppManager.app.getTime());
+            txtTime.setDisable(false);
         }
     }
 
@@ -102,7 +139,11 @@ public class MouseMoverController {
         }
     }
 
-    private void refreshTimer(int time){
+    /**
+     * Display the time remaining
+     * @param time
+     */
+    private void refreshTimer(Long time){
         this.txtTimer.setText(String.valueOf(time));
     }
 }
