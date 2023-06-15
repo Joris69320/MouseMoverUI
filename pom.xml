@@ -6,13 +6,13 @@
 
     <groupId>fr.thivard</groupId>
     <artifactId>MouseMoverUI</artifactId>
-    <version>1.2.1</version>
+    <version>1.1.5</version>
     <name>MouseMoverUI</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
-        <junit.version>5.9.2</junit.version>
+        <junit.version>5.9.1</junit.version>
         <sonar.organization>joris69320</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
@@ -21,12 +21,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>19.0.2.1</version>
+            <version>17.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>19.0.2.1</version>
+            <version>17.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
